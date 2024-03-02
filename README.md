@@ -1,6 +1,12 @@
 # Separating Dual-Column PDF Documents for RAG Models
 
-This repository contains a Jupyter notebook that outlines an approach for separating English and French texts from dual-column PDF documents. This preprocessing step is crucial for Retrieval-Augmented Generation (RAG) models, especially when dealing with documents that contain side-by-side bilingual content. RAG models, which leverage both retrieval mechanisms and generative capabilities, can significantly benefit from data that has been separated by language.
+This repository contains a Jupyter notebook that outlines an approach for separating English and French texts from dual-column PDF documents. This preprocessing step is crucial for Retrieval-Augmented Generation (RAG) models, especially when dealing with documents that contain side-by-side bilingual content. RAG models, which leverage both retrieval mechanisms and generative capabilities, can significantly benefit from data that has been separated by language for the following reasons:
+
+- Embedding Space: Language models create embeddings, which are numerical representations of words and phrases. Embeddings from different languages occupy different regions within a vector space. Separating languages ensures that similar concepts in each language cluster together, allowing for accurate retrieval.
+- Query Specificity: When a user asks a question, it's likely in a single language. If the documents aren't separated, the RAG model may retrieve irrelevant text from the other language, reducing accuracy and usefulness.
+- Improved Accuracy: Separate language models and embeddings lead to better understanding of each language's nuances, resulting in more accurate retrieval and generation of relevant text.
+- Tailored Responses: The RAG model can provide responses in the same language as the query, ensuring a smoother user experience.
+- Reduced Noise: Prevents confusion that would arise from the model attempting to process two languages simultaneously.
 
 ## Overview
 
